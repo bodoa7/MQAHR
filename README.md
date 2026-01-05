@@ -66,6 +66,20 @@ We propose a **causally grounded** classification of hallucinations in medical r
 - Long (31-50 steps): 11.0%
 - Very Long (51+ steps): 18.6%
 
+## 💻 Code Structure
+
+### Dataset Annotation
+- **`GPT4o_annotations.py`** - Automated annotation pipeline using GPT-4o for initial hallucination classification and difficulty labeling
+
+### Evaluation Scripts
+- **`simplified_binary_hallucination_detection.py`** - Binary detection (hallucination present/absent) with simple prompts
+- **`fine_grained_hallucination_detection.py`** - Detection with causally grounded instructions specifying hallucination types (H1-H4)
+- **`hallucination_subtype_classification.py`** - Identifies specific hallucination subtypes and computes per-type performance metrics
+- **`confidence_conditioned_detection.py`** - Detection with explicit confidence expression (High/Medium/Low)
+- **`step_level_hallucination_localization.py`** - Locates the first reasoning step where hallucination occurs
+
+
+
 ## 🔬 Key Findings
 
 ### 1. **Reverse Scaling Effect**
